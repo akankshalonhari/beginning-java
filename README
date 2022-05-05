@@ -1,0 +1,20 @@
+
+Commands used : 
+
+project-a
+javac src/Runner.java -d target
+java -cp target com.abccorp.Runner 
+jar -cvfm myapp.jar MANIFEST.MF -C target .
+java -jar myapp.jar
+
+
+Project-b
+javac src/Person.java -d target 
+#no java cmd execution for this proejct#
+
+Project-a
+javac -cp ../project-b/target src/Runner.java -d target
+java -cp target:../project-b/target com.abccorp.Runner
+
+
+mvn archetype:generate 
